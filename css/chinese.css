@@ -1,0 +1,883 @@
+/* =========================================================
+   國文頁面
+   ========================================================= */
+
+.chinese-main {
+    padding-bottom: 80px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #5f6b7a;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #0b76d1;
+}
+
+.subject-hero {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 42px;
+    margin-bottom: 52px;
+    border: 1px solid #dbe8f5;
+    border-radius: 24px;
+    background:
+        linear-gradient(
+            135deg,
+            #f4faff 0%,
+            #ffffff 100%
+        );
+}
+
+.subject-hero-icon {
+    flex: 0 0 104px;
+    width: 104px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background: #e8f4ff;
+    color: #0b76d1;
+}
+
+.subject-hero-icon svg {
+    width: 58px;
+    height: 58px;
+}
+
+.subject-hero-content {
+    min-width: 0;
+}
+
+.subject-hero-label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #0b76d1;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.subject-hero h1 {
+    margin: 0;
+    color: #18212f;
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+.subject-hero p {
+    max-width: 720px;
+    margin: 14px 0 0;
+    color: #667085;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   國文學習分類
+   ========================================================= */
+
+.learning-section {
+    margin-bottom: 52px;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #18212f;
+    font-size: 26px;
+    line-height: 1.4;
+}
+
+.section-heading p {
+    margin: 8px 0 0;
+    color: #667085;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.learning-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 130px;
+    padding: 24px;
+    border: 1px solid #e0e7ef;
+    border-radius: 18px;
+    background: #ffffff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(15, 35, 60, 0.05);
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.learning-card:hover {
+    transform: translateY(-3px);
+    border-color: #b8d8f2;
+    box-shadow: 0 14px 30px rgba(15, 35, 60, 0.08);
+}
+
+.learning-card-icon {
+    flex: 0 0 52px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #eef7ff;
+    color: #0b76d1;
+}
+
+.learning-card-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.learning-card-content {
+    min-width: 0;
+}
+
+.learning-card-content strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #18212f;
+    font-size: 17px;
+}
+
+.learning-card-content span {
+    display: block;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.learning-card-arrow {
+    margin-left: auto;
+    color: #98a2b3;
+    font-size: 22px;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.learning-card:hover .learning-card-arrow {
+    color: #0b76d1;
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   快速練習
+   ========================================================= */
+
+.quick-practice-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 30px;
+    border-radius: 20px;
+    background: #f5f9fd;
+    border: 1px solid #e0ebf5;
+}
+
+.quick-practice-card h2 {
+    margin: 0 0 6px;
+    color: #18212f;
+    font-size: 20px;
+}
+
+.quick-practice-card p {
+    margin: 0;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.quick-practice-button {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 10px;
+    background: #0b76d1;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.quick-practice-button:hover {
+    background: #095fa8;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   返回連結
+   ========================================================= */
+
+.page-back-link {
+    margin-top: 34px;
+}
+
+.page-back-link a {
+    color: #5f6b7a;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.page-back-link a:hover {
+    color: #0b76d1;
+}
+
+
+/* =========================================================
+   字詞與成語頁面
+   ========================================================= */
+
+.vocabulary-main {
+    padding-bottom: 80px;
+}
+
+.vocabulary-hero {
+    margin-bottom: 48px;
+}
+
+.vocabulary-hero-icon {
+    background: #edf7ff;
+    color: #0b76d1;
+}
+
+
+/* =========================================================
+   字詞與成語：學習／測驗選擇
+   ========================================================= */
+
+.vocabulary-mode-section {
+    margin-bottom: 40px;
+}
+
+.vocabulary-mode-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.vocabulary-mode-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    min-height: 190px;
+    padding: 30px;
+    border: 1px solid #dfe7ef;
+    border-radius: 22px;
+    background: #ffffff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(15, 35, 60, 0.05);
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.vocabulary-mode-card:hover {
+    transform: translateY(-3px);
+    border-color: #b8d8f2;
+    box-shadow: 0 16px 32px rgba(15, 35, 60, 0.09);
+}
+
+.vocabulary-mode-icon {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background: #edf7ff;
+    color: #0b76d1;
+}
+
+.vocabulary-mode-icon svg {
+    width: 38px;
+    height: 38px;
+}
+
+.vocabulary-mode-content {
+    min-width: 0;
+}
+
+.vocabulary-mode-content strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #18212f;
+    font-size: 22px;
+}
+
+.vocabulary-mode-content span {
+    display: block;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.vocabulary-mode-arrow {
+    flex: 0 0 auto;
+    margin-left: auto;
+    color: #98a2b3;
+    font-size: 24px;
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.vocabulary-mode-card:hover .vocabulary-mode-arrow {
+    color: #0b76d1;
+    transform: translateX(4px);
+}
+
+.vocabulary-quiz-card .vocabulary-mode-icon {
+    background: #f2f7ff;
+}
+
+
+/* =========================================================
+   字詞與成語：學習頁
+   ========================================================= */
+
+.vocabulary-study-main {
+    padding-bottom: 80px;
+}
+
+.vocabulary-study-hero {
+    margin-bottom: 42px;
+}
+
+.vocabulary-study-section {
+    max-width: 980px;
+    margin: 0 auto 42px;
+}
+
+.vocabulary-study-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 22px;
+}
+
+.vocabulary-study-label {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #0b76d1;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.vocabulary-study-header h2 {
+    margin: 0;
+    color: #18212f;
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+.vocabulary-study-progress {
+    flex: 0 0 180px;
+}
+
+.vocabulary-study-progress-text {
+    display: block;
+    margin-bottom: 8px;
+    color: #667085;
+    font-size: 14px;
+    text-align: right;
+}
+
+.vocabulary-study-progress-text strong {
+    color: #18212f;
+}
+
+.vocabulary-study-progress-bar {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e8eef4;
+}
+
+.vocabulary-study-progress-bar span {
+    display: block;
+    width: 25%;
+    height: 100%;
+    border-radius: inherit;
+    background: #0b76d1;
+    transition: width 0.25s ease;
+}
+
+
+/* =========================================================
+   學習內容卡片
+   ========================================================= */
+
+.vocabulary-learning-card {
+    padding: 42px;
+    border: 1px solid #dfe7ef;
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(15, 35, 60, 0.06);
+}
+
+.vocabulary-learning-type {
+    margin-bottom: 16px;
+}
+
+.vocabulary-learning-type span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: #edf7ff;
+    color: #0b76d1;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.vocabulary-learning-title {
+    padding-bottom: 28px;
+    border-bottom: 1px solid #e8edf2;
+}
+
+.vocabulary-learning-title h3 {
+    margin: 0;
+    color: #18212f;
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+}
+
+.vocabulary-learning-title p {
+    margin: 9px 0 0;
+    color: #667085;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.vocabulary-learning-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 34px;
+}
+
+.vocabulary-learning-block {
+    padding: 28px 0;
+}
+
+.vocabulary-learning-block:nth-child(n + 3) {
+    border-top: 1px solid #e8edf2;
+}
+
+.vocabulary-learning-block h4 {
+    margin: 0 0 10px;
+    color: #18212f;
+    font-size: 16px;
+}
+
+.vocabulary-learning-block p {
+    margin: 0;
+    color: #5f6b7a;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.vocabulary-example-block {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   學習頁上一個／下一個
+   ========================================================= */
+
+.vocabulary-study-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.vocabulary-study-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 120px;
+    min-height: 46px;
+    padding: 0 20px;
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.vocabulary-study-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.vocabulary-study-button-secondary {
+    border: 1px solid #d6dee7;
+    background: #ffffff;
+    color: #4b5563;
+}
+
+.vocabulary-study-button-secondary:hover:not(:disabled) {
+    border-color: #b8c8d8;
+    background: #f8fafc;
+}
+
+.vocabulary-study-button-primary {
+    border: 1px solid #0b76d1;
+    background: #0b76d1;
+    color: #ffffff;
+}
+
+.vocabulary-study-button-primary:hover:not(:disabled) {
+    background: #095fa8;
+    border-color: #095fa8;
+}
+
+.vocabulary-study-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   學習完成後
+   ========================================================= */
+
+.vocabulary-study-after-section {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.vocabulary-study-after-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 24px 28px;
+    border: 1px solid #dfe8f1;
+    border-radius: 18px;
+    background: #f7fbff;
+}
+
+.vocabulary-study-after-icon {
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #e6f4ff;
+    color: #0b76d1;
+}
+
+.vocabulary-study-after-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.vocabulary-study-after-card > div:nth-child(2) {
+    min-width: 0;
+}
+
+.vocabulary-study-after-card h2 {
+    margin: 0 0 4px;
+    color: #18212f;
+    font-size: 17px;
+}
+
+.vocabulary-study-after-card p {
+    margin: 0;
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.vocabulary-study-quiz-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    color: #0b76d1;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.vocabulary-study-quiz-link:hover {
+    color: #095fa8;
+}
+
+
+/* =========================================================
+   RWD
+   ========================================================= */
+
+@media (max-width: 980px) {
+    .learning-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .vocabulary-mode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vocabulary-study-content {
+        grid-template-columns: 1fr;
+    }
+
+    .vocabulary-learning-content {
+        grid-template-columns: 1fr;
+    }
+
+    .vocabulary-learning-block:nth-child(n + 2) {
+        border-top: 1px solid #e8edf2;
+    }
+
+    .vocabulary-example-block {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .chinese-main {
+        padding-bottom: 56px;
+    }
+
+    .subject-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .subject-hero-icon {
+        flex-basis: 76px;
+        width: 76px;
+        height: 76px;
+        border-radius: 18px;
+    }
+
+    .subject-hero-icon svg {
+        width: 44px;
+        height: 44px;
+    }
+
+    .subject-hero h1 {
+        font-size: 32px;
+    }
+
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-practice-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quick-practice-button {
+        width: 100%;
+    }
+
+    .vocabulary-mode-card {
+        min-height: 0;
+        padding: 24px;
+    }
+
+    .vocabulary-mode-icon {
+        flex-basis: 56px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .vocabulary-mode-icon svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .vocabulary-study-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .vocabulary-study-progress {
+        width: 100%;
+    }
+
+    .vocabulary-study-progress-text {
+        text-align: left;
+    }
+
+    .vocabulary-learning-card {
+        padding: 30px 24px;
+        border-radius: 20px;
+    }
+
+    .vocabulary-learning-title h3 {
+        font-size: 34px;
+    }
+
+    .vocabulary-study-navigation {
+        gap: 10px;
+    }
+
+    .vocabulary-study-button {
+        flex: 1;
+    }
+
+    .vocabulary-study-after-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 22px;
+    }
+
+    .vocabulary-study-quiz-link {
+        width: 100%;
+        margin-left: 64px;
+    }
+}
+
+@media (max-width: 430px) {
+    .subject-hero {
+        padding: 24px;
+    }
+
+    .subject-hero h1 {
+        font-size: 28px;
+    }
+
+    .subject-hero p {
+        font-size: 14px;
+    }
+
+    .vocabulary-mode-card {
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .vocabulary-mode-content strong {
+        font-size: 19px;
+    }
+
+    .vocabulary-mode-content span {
+        font-size: 13px;
+    }
+
+    .vocabulary-mode-arrow {
+        font-size: 20px;
+    }
+
+    .vocabulary-learning-card {
+        padding: 24px 20px;
+    }
+
+    .vocabulary-learning-title h3 {
+        font-size: 30px;
+    }
+
+    .vocabulary-learning-title p {
+        font-size: 15px;
+    }
+
+    .vocabulary-learning-block {
+        padding: 22px 0;
+    }
+
+    .vocabulary-study-navigation {
+        flex-direction: column-reverse;
+    }
+
+    .vocabulary-study-button {
+        width: 100%;
+    }
+
+    .vocabulary-study-quiz-link {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 350px) {
+    .vocabulary-mode-card {
+        align-items: flex-start;
+    }
+
+    .vocabulary-mode-arrow {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   減少動畫
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .learning-card,
+    .learning-card-arrow,
+    .quick-practice-button,
+    .vocabulary-mode-card,
+    .vocabulary-mode-arrow,
+    .vocabulary-study-button,
+    .vocabulary-study-progress-bar span {
+        transition: none;
+    }
+}

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="樂知學｜第二代學習平台，讓學習更輕鬆、更有效率。"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b76d1"
+    >
+
+    <title>樂知學｜第二代學習平台</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a
+                href="index.html"
+                class="site-brand"
+                aria-label="樂知學首頁"
+            >
+                <span class="site-brand-icon" aria-hidden="true">
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="42"
+                        height="42"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M4 5.5C4 4.672 4.672 4 5.5 4H10C11.105 4 12 4.895 12 6V20C12 18.895 11.105 18 10 18H5.5C4.672 18 4 17.328 4 16.5V5.5Z"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M20 5.5C20 4.672 19.328 4 18.5 4H14C12.895 4 12 4.895 12 6V20C12 18.895 12.895 18 14 18H18.5C19.328 18 20 17.328 20 16.5V5.5Z"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M7 8H9"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M15 8H17"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </span>
+
+                <span class="site-brand-text">
+                    <strong>樂知學</strong>
+                    <small>第二代學習平台</small>
+                </span>
+            </a>
+
+            <div class="header-actions">
+
+                <a
+                    href="guide/index.html"
+                    class="header-action"
+                    aria-label="使用指南"
+                    title="使用指南"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="9"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        />
+
+                        <path
+                            d="M12 10V16"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        />
+
+                        <circle
+                            cx="12"
+                            cy="7"
+                            r="1"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </a>
+
+                <button
+                    type="button"
+                    class="header-action"
+                    id="announcement-button"
+                    aria-label="查看最新公告"
+                    title="查看最新公告"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M4 10V14"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M6 9.5V14.5L17 19V5L6 9.5Z"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M17 9H19C20.105 9 21 9.895 21 11V13C21 14.105 20.105 15 19 15H17"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        />
+                    </svg>
+                </button>
+
+                <div
+                    class="header-account"
+                    id="header-account"
+                >
+                    <a
+                        href="auth/login.html"
+                        class="login-button"
+                    >
+                        登入
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="site-main">
+
+        <section
+            class="home-primary-layout"
+            aria-label="主要學習入口"
+        >
+
+            <section
+                class="checkin-section"
+                aria-labelledby="checkin-title"
+            >
+
+                <div class="checkin-card">
+
+                    <div class="checkin-content">
+
+                        <span class="section-label">
+                            每日學習
+                        </span>
+
+                        <h1 id="checkin-title">
+                            每日簽到
+                        </h1>
+
+                        <p class="checkin-days">
+                            累積天數：
+                            <strong id="checkin-total-days">0</strong>
+                            天
+                        </p>
+
+                        <p
+                            class="checkin-message"
+                            id="checkin-message"
+                        >
+                            今天也一起學習吧。
+                        </p>
+
+                    </div>
+
+                    <div class="checkin-action">
+
+                        <button
+                            type="button"
+                            class="checkin-button"
+                            id="checkin-button"
+                        >
+                            簽到
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section
+                class="subjects-section"
+                aria-labelledby="subjects-title"
+            >
+
+                <div class="subject-grid">
+
+                    <a
+                        href="chinese/index.html"
+                        class="subject-card subject-card-chinese"
+                    >
+
+                        <span
+                            class="subject-status subject-status-new"
+                        >
+                            NEW
+                        </span>
+
+                        <span
+                            class="subject-icon"
+                            aria-hidden="true"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="52"
+                                height="52"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M16.5 3.5A2.121 2.121 0 0 1 19.5 6.5L7 19L3 20L4 16L16.5 3.5Z"
+                                    fill="currentColor"
+                                />
+
+                                <path
+                                    d="M13.5 6.5L17.5 10.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="subject-name">
+                            國文
+                        </span>
+
+                    </a>
+
+                    <div
+                        class="subject-card subject-card-math subject-card-disabled"
+                        aria-disabled="true"
+                    >
+
+                        <span
+                            class="subject-icon"
+                            aria-hidden="true"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="52"
+                                height="52"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <rect
+                                    x="4"
+                                    y="3"
+                                    width="16"
+                                    height="18"
+                                    rx="2"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                />
+
+                                <path
+                                    d="M8 7H16"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                />
+
+                                <path
+                                    d="M8 11H10M14 11H16M8 15H10M14 15H16M8 18H10M14 18H16"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="subject-name">
+                            數學
+                        </span>
+
+                        <span class="subject-disabled-label">
+                            開發中
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="english/index.html"
+                        class="subject-card subject-card-english"
+                    >
+
+                        <span
+                            class="subject-icon"
+                            aria-hidden="true"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="52"
+                                height="52"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M6.5 20L10.75 4H13.25L17.5 20"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                                <path
+                                    d="M8.35 14H15.65"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="subject-name">
+                            English
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="science/index.html"
+                        class="subject-card subject-card-science"
+                    >
+
+                        <span
+                            class="subject-status subject-status-new"
+                        >
+                            NEW
+                        </span>
+
+                        <span
+                            class="subject-icon"
+                            aria-hidden="true"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="52"
+                                height="52"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M9 3H15"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+
+                                <path
+                                    d="M10 3V8L5 18.5C4.35 19.86 5.34 21.5 6.85 21.5H17.15C18.66 21.5 19.65 19.86 19 18.5L14 8V3"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linejoin="round"
+                                />
+
+                                <path
+                                    d="M7 17H17"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="subject-name">
+                            自然
+                        </span>
+
+                    </a>
+
+                    <div
+                        class="subject-card subject-card-social subject-card-disabled"
+                        aria-disabled="true"
+                    >
+
+                        <span
+                            class="subject-icon"
+                            aria-hidden="true"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="52"
+                                height="52"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="9"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                />
+
+                                <path
+                                    d="M3.5 10H20.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+
+                                <path
+                                    d="M3.5 14H20.5"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+
+                                <path
+                                    d="M12 3C14.2 5.4 15.2 8.4 15.2 12C15.2 15.6 14.2 18.6 12 21"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+
+                                <path
+                                    d="M12 3C9.8 5.4 8.8 8.4 8.8 12C8.8 15.6 9.8 18.6 12 21"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                />
+                            </svg>
+                        </span>
+
+                        <span class="subject-name">
+                            社會
+                        </span>
+
+                        <span class="subject-disabled-label">
+                            開發中
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <section
+            class="feature-section"
+            aria-labelledby="skills-title"
+        >
+
+            <div class="feature-section-heading">
+
+                <span
+                    class="heading-accent heading-accent-colorful"
+                    aria-hidden="true"
+                ></span>
+
+                <div>
+                    <h2 id="skills-title">
+                        技能與興趣館
+                    </h2>
+
+                    <p>
+                        課業之外，也可以學習自己有興趣的事物
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <a
+                    href="japanese/index.html"
+                    class="feature-card feature-card-japanese"
+                >
+
+                    <div class="feature-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="42"
+                            height="42"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="9"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="4.5"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <div class="feature-content">
+
+                        <h3>
+                            日語研究室
+                        </h3>
+
+                        <p>
+                            五十音、基礎單字與發音
+                        </p>
+
+                    </div>
+
+                </a>
+
+                <a
+                    href="chess/index.html"
+                    class="feature-card feature-card-chess"
+                >
+
+                    <div class="feature-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="42"
+                            height="42"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M8 20H16"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M9 17H15L14 20H10L9 17Z"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M10 17C10 14.5 8 13 8 10.5C8 8.84 9.34 8 12 8C14.66 8 16 8.84 16 10.5C16 13 14 14.5 14 17"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M10 5H14M12 3V7"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <div class="feature-content">
+
+                        <h3>
+                            西洋棋學院
+                        </h3>
+
+                        <p>
+                            策略、開局與棋局思考
+                        </p>
+
+                    </div>
+
+                </a>
+
+                <div
+                    class="feature-card feature-card-cube feature-card-disabled"
+                    aria-disabled="true"
+                >
+
+                    <div class="feature-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="42"
+                            height="42"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M12 3V12L4 7.5"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M12 12L20 7.5"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M12 12V21"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M8 5.25V9.75M16 9.75V14.25M8 14.25V18.75"
+                                stroke="currentColor"
+                                stroke-width="1.2"
+                                stroke-linecap="round"
+                                opacity="0.8"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <div class="feature-content">
+
+                        <h3>
+                            魔術方塊 3D
+                        </h3>
+
+                        <p>
+                            公式演示與練習工具
+                        </p>
+
+                        <span class="feature-status">
+                            開發中
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="assistant-section"
+            aria-labelledby="assistant-title"
+        >
+
+            <div class="feature-section-heading">
+
+                <span
+                    class="heading-accent"
+                    aria-hidden="true"
+                ></span>
+
+                <div>
+                    <h2 id="assistant-title">
+                        學習助手
+                    </h2>
+
+                    <p>
+                        幫助你整理與規劃自己的學習
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="assistant-grid">
+
+                <a
+                    href="tools/notebook.html"
+                    class="assistant-card assistant-card-notebook"
+                >
+
+                    <div class="assistant-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="40"
+                            height="40"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect
+                                x="4"
+                                y="3"
+                                width="16"
+                                height="18"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            />
+
+                            <path
+                                d="M8 8H16"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M8 12H16"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M8 16H13"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+                        <h3>
+                            虛擬筆記本
+                        </h3>
+
+                        <p>
+                            整理學習內容與個人筆記
+                        </p>
+                    </div>
+
+                </a>
+
+                <a
+                    href="quiz/index.html"
+                    class="assistant-card assistant-card-quiz"
+                >
+
+                    <div class="assistant-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="40"
+                            height="40"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M6 4H18C19.105 4 20 4.895 20 6V18C20 19.105 19.105 20 18 20H6C4.895 20 4 19.105 4 18V6C4 4.895 4.895 4 6 4Z"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            />
+
+                            <path
+                                d="M8 9H16"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M8 13H16"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M8 17H12"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+                        <h3>
+                            測驗中心
+                        </h3>
+
+                        <p>
+                            練習題目、檢查自己的學習成果
+                        </p>
+                    </div>
+
+                </a>
+
+                <a
+                    href="mistakes/index.html"
+                    class="assistant-card assistant-card-mistakes"
+                >
+
+                    <div class="assistant-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            width="40"
+                            height="40"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M6 4H18C19.105 4 20 4.895 20 6V18C20 19.105 19.105 20 18 20H6C4.895 20 4 19.105 4 18V6C4 4.895 4.895 4 6 4Z"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            />
+
+                            <path
+                                d="M8 9L10 11L14 7"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M8 15H16"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+                        <h3>
+                            錯題紀錄
+                        </h3>
+
+                        <p>
+                            找出不熟悉的地方並重新練習
+                        </p>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <strong>樂知學</strong>
+                <span>第二代學習平台</span>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="guide/index.html">
+                    使用指南
+                </a>
+
+                <a href="about/index.html">
+                    關於樂知學
+                </a>
+
+            </div>
+
+            <p class="footer-copyright">
+                &copy; 2026 樂知學
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script
+        src="js/app.js"
+        defer
+    ></script>
+
+</body>
+</html>

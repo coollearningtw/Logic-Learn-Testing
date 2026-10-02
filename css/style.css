@@ -1,0 +1,1642 @@
+/* =========================================================
+   樂知學｜第二代學習平台
+   全站基礎樣式
+   ========================================================= */
+
+
+/* =========================================================
+   1. 基礎設定
+   ========================================================= */
+
+:root {
+    --color-primary: #0b76d1;
+    --color-primary-dark: #075da8;
+    --color-primary-light: #eaf5ff;
+
+    --color-text: #263238;
+    --color-text-secondary: #60717d;
+    --color-text-muted: #8a969e;
+
+    --color-background: #f5f7fa;
+    --color-surface: #ffffff;
+    --color-border: #e3e8ed;
+
+    --color-success: #2e9b62;
+    --color-warning: #e49b32;
+    --color-danger: #d95c5c;
+
+    --shadow-small:
+        0 2px 8px rgba(28, 45, 64, 0.06);
+
+    --shadow-medium:
+        0 6px 20px rgba(28, 45, 64, 0.08);
+
+    --shadow-large:
+        0 12px 32px rgba(28, 45, 64, 0.10);
+
+    --radius-small: 10px;
+    --radius-medium: 14px;
+    --radius-large: 18px;
+
+    --content-width: 1180px;
+
+    --transition-fast:
+        160ms ease;
+
+    --transition-normal:
+        240ms ease;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    min-width: 320px;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    min-width: 320px;
+
+    background: var(--color-background);
+
+    color: var(--color-text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img,
+svg {
+    display: block;
+}
+
+
+svg {
+    flex-shrink: 0;
+}
+
+
+::selection {
+    background: rgba(11, 118, 209, 0.18);
+}
+
+
+/* =========================================================
+   2. 頁首
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--color-border);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.header-container {
+    width: min(
+        calc(100% - 40px),
+        var(--content-width)
+    );
+
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    color: var(--color-primary);
+}
+
+
+.site-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    color: var(--color-primary);
+}
+
+
+.site-brand-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.15;
+}
+
+
+.site-brand-text strong {
+    color: var(--color-text);
+
+    font-size: 20px;
+    font-weight: 750;
+
+    letter-spacing: 0.04em;
+}
+
+
+.site-brand-text small {
+    margin-top: 3px;
+
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.06em;
+}
+
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.header-action {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--color-text-secondary);
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+
+.header-action:hover {
+    background: var(--color-primary-light);
+
+    color: var(--color-primary);
+}
+
+
+.header-action:focus-visible,
+.login-button:focus-visible,
+.subject-card:focus-visible,
+.feature-card:focus-visible,
+.assistant-card:focus-visible,
+.checkin-button:focus-visible {
+    outline: 3px solid rgba(11, 118, 209, 0.24);
+
+    outline-offset: 2px;
+}
+
+
+.header-account {
+    margin-left: 4px;
+}
+
+
+.login-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 72px;
+    height: 38px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--color-primary);
+
+    border-radius: 9px;
+
+    background: var(--color-primary);
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.login-button:hover {
+    background: var(--color-primary-dark);
+
+    border-color: var(--color-primary-dark);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   3. 主要內容
+   ========================================================= */
+
+.site-main {
+    width: min(
+        calc(100% - 40px),
+        var(--content-width)
+    );
+
+    margin: 0 auto;
+
+    padding: 34px 0 72px;
+}
+
+
+/* =========================================================
+   4. 首頁第一區
+   ========================================================= */
+
+.home-primary-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 0.82fr)
+        minmax(0, 2fr);
+
+    gap: 28px;
+
+    /*
+     * 桌面版左右兩個區塊等高。
+     *
+     * 右側學科區塊的高度由兩排學科卡片決定，
+     * 左側每日簽到區塊則跟著整個高度延伸。
+     */
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   5. 每日簽到
+   ========================================================= */
+
+.checkin-section {
+    min-width: 0;
+
+    /*
+     * 不再用 padding-top 人為往下推。
+     *
+     * 卡片會直接與右側第一排學科卡片的上緣對齊。
+     */
+    padding-top: 0;
+
+    /*
+     * 讓簽到卡片可以填滿整個左側 Grid row 高度。
+     */
+    display: flex;
+}
+
+
+.checkin-card {
+    position: relative;
+
+    /*
+     * 直接填滿 checkin-section 的完整高度。
+     *
+     * 因為 home-primary-layout 使用 stretch，
+     * 所以這裡會與右側整個學科區塊上下完全對齊。
+     */
+    width: 100%;
+    min-height: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    padding: 28px;
+
+    border: 1px solid #dce7f0;
+
+    border-radius: var(--radius-large);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #f2f8fd 100%
+        );
+
+    box-shadow: var(--shadow-small);
+}
+
+
+.checkin-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -70px;
+    right: -60px;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(11, 118, 209, 0.06);
+
+    pointer-events: none;
+}
+
+
+.checkin-card::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -90px;
+    left: -70px;
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background: rgba(11, 118, 209, 0.035);
+
+    pointer-events: none;
+}
+
+
+.checkin-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 25px;
+
+    padding: 3px 9px;
+
+    border-radius: 999px;
+
+    background: var(--color-primary-light);
+
+    color: var(--color-primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+
+.checkin-card h1 {
+    margin: 16px 0 5px;
+
+    color: var(--color-text);
+
+    font-size: 28px;
+    font-weight: 750;
+
+    line-height: 1.3;
+}
+
+
+.checkin-days {
+    margin: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 14px;
+}
+
+
+.checkin-days strong {
+    color: var(--color-primary);
+
+    font-size: 21px;
+    font-weight: 750;
+}
+
+
+.checkin-message {
+    margin: 20px 0 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 14px;
+}
+
+
+.checkin-action {
+    position: relative;
+    z-index: 1;
+
+    margin-top: 32px;
+}
+
+
+.checkin-button {
+    width: 100%;
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: var(--color-primary);
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 12px rgba(11, 118, 209, 0.20);
+
+    transition:
+        background-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.checkin-button:hover {
+    background: var(--color-primary-dark);
+
+    box-shadow:
+        0 6px 16px rgba(11, 118, 209, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+.checkin-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   6. 學科區塊
+   ========================================================= */
+
+.subjects-section {
+    min-width: 0;
+}
+
+
+/*
+ * 桌面版不顯示：
+ *
+ * 「學科學習」
+ * 「選擇一個科目開始學習」
+ *
+ * 學科卡片直接從區塊頂端開始，
+ * 讓它可以與每日簽到卡片上下完全對齊。
+ */
+
+
+.section-heading h2 {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 22px;
+    font-weight: 750;
+
+    line-height: 1.35;
+}
+
+
+.section-heading p {
+    margin: 4px 0 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+}
+
+
+.subject-grid {
+    display: grid;
+
+    /*
+     * 6 欄：
+     *
+     * 第一排：
+     * 2 + 2 + 2
+     *
+     * 第二排：
+     * 3 + 3
+     *
+     * 兩排完整填滿整個學科區域。
+     */
+    grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.subject-card {
+    position: relative;
+
+    min-height: 154px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    overflow: hidden;
+
+    padding: 20px 12px;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-medium);
+
+    background: var(--color-surface);
+
+    box-shadow: var(--shadow-small);
+
+    color: var(--color-text);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+
+.subject-card:nth-child(1),
+.subject-card:nth-child(2),
+.subject-card:nth-child(3) {
+    grid-column: span 2;
+}
+
+
+.subject-card:nth-child(4),
+.subject-card:nth-child(5) {
+    grid-column: span 3;
+}
+
+
+.subject-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbdce9;
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.subject-card:not(.subject-card-disabled):active {
+    transform: translateY(-1px);
+}
+
+
+.subject-card-disabled {
+    cursor: default;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7f8f9
+        );
+
+    color: #9aa4ab;
+
+    box-shadow: none;
+}
+
+
+.subject-card-disabled:hover {
+    transform: none;
+
+    border-color: var(--color-border);
+
+    box-shadow: none;
+}
+
+
+.subject-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    color: var(--color-primary);
+}
+
+
+.subject-card-chinese .subject-icon {
+    color: #d16a5d;
+}
+
+
+.subject-card-english .subject-icon {
+    color: #5b7fc1;
+}
+
+
+.subject-card-science .subject-icon {
+    color: #4f9b72;
+}
+
+
+.subject-card-math .subject-icon {
+    color: #8a6bb8;
+}
+
+
+.subject-card-social .subject-icon {
+    color: #c08b46;
+}
+
+
+.subject-name {
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.subject-status {
+    position: absolute;
+
+    top: 9px;
+    right: 9px;
+
+    padding: 2px 6px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.04em;
+}
+
+
+.subject-status-new {
+    background: #eaf5ff;
+
+    color: var(--color-primary);
+}
+
+
+.subject-disabled-label {
+    margin-top: -7px;
+
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   7. 共用區塊標題
+   ========================================================= */
+
+.feature-section,
+.assistant-section {
+    margin-top: 52px;
+}
+
+
+.feature-section-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+.heading-accent {
+    width: 4px;
+    min-width: 4px;
+
+    height: 46px;
+
+    margin-top: 2px;
+
+    border-radius: 999px;
+
+    background: var(--color-primary);
+}
+
+
+.heading-accent-colorful {
+    background:
+        linear-gradient(
+            to bottom,
+            #d16a5d 0%,
+            #d16a5d 25%,
+            #5b7fc1 25%,
+            #5b7fc1 50%,
+            #4f9b72 50%,
+            #4f9b72 75%,
+            #c08b46 75%,
+            #c08b46 100%
+        );
+}
+
+
+.feature-section-heading h2 {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 22px;
+    font-weight: 750;
+
+    line-height: 1.35;
+}
+
+
+.feature-section-heading p {
+    margin: 4px 0 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   8. 技能與興趣館
+   ========================================================= */
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+.feature-card {
+    position: relative;
+
+    min-height: 132px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 22px;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-medium);
+
+    background: var(--color-surface);
+
+    box-shadow: var(--shadow-small);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+
+.feature-card:not(.feature-card-disabled):hover {
+    transform: translateY(-3px);
+
+    border-color: #cbdce9;
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.feature-card-disabled {
+    cursor: default;
+
+    color: var(--color-text-muted);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7f8f9
+        );
+
+    box-shadow: none;
+}
+
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+
+    min-width: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: var(--color-primary-light);
+
+    color: var(--color-primary);
+}
+
+
+.feature-card-japanese .feature-icon {
+    background: #fff1ef;
+
+    color: #c7675d;
+}
+
+
+.feature-card-chess .feature-icon {
+    background: #f0ecfa;
+
+    color: #7962a8;
+}
+
+
+.feature-card-cube .feature-icon {
+    background: #eef2f5;
+
+    color: #7c8a94;
+}
+
+
+.feature-content {
+    min-width: 0;
+}
+
+
+.feature-content h3 {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+.feature-content p {
+    margin: 5px 0 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+.feature-status {
+    display: inline-flex;
+
+    margin-top: 6px;
+
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   9. 學習助手
+   ========================================================= */
+
+.assistant-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+.assistant-card {
+    min-height: 116px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 20px;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-medium);
+
+    background: var(--color-surface);
+
+    box-shadow: var(--shadow-small);
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+
+.assistant-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbdce9;
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.assistant-icon {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: var(--color-primary-light);
+
+    color: var(--color-primary);
+}
+
+
+.assistant-card-quiz .assistant-icon {
+    background: #eef2fa;
+
+    color: #5d78b2;
+}
+
+
+.assistant-card-mistakes .assistant-icon {
+    background: #fff2ec;
+
+    color: #c4775a;
+}
+
+
+.assistant-card h3 {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 16px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+.assistant-card p {
+    margin: 5px 0 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   10. 頁尾
+   ========================================================= */
+
+.site-footer {
+    border-top: 1px solid var(--color-border);
+
+    background: #ffffff;
+}
+
+
+.footer-container {
+    width: min(
+        calc(100% - 40px),
+        var(--content-width)
+    );
+
+    min-height: 100px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+}
+
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.35;
+}
+
+
+.footer-brand strong {
+    color: var(--color-text);
+
+    font-size: 15px;
+}
+
+
+.footer-brand span {
+    color: var(--color-text-muted);
+
+    font-size: 11px;
+}
+
+
+.footer-links {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.footer-links a {
+    color: var(--color-text-secondary);
+
+    font-size: 13px;
+
+    transition:
+        color var(--transition-fast);
+}
+
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+
+.footer-copyright {
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   11. 平板／中等寬度
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+    .home-primary-layout {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        align-items: start;
+    }
+
+
+    .checkin-section {
+        padding-top: 0;
+
+        display: block;
+    }
+
+
+    .checkin-card {
+        width: 100%;
+
+        min-height: 220px;
+        height: auto;
+
+        flex-direction: row;
+        align-items: center;
+
+        gap: 32px;
+    }
+
+
+    .checkin-action {
+        width: 190px;
+
+        min-width: 190px;
+
+        margin-top: 0;
+    }
+
+
+    /*
+     * 平板維持 3 + 2。
+     */
+    .subject-grid {
+        grid-template-columns:
+            repeat(6, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .subject-card:nth-child(1),
+    .subject-card:nth-child(2),
+    .subject-card:nth-child(3) {
+        grid-column: span 2;
+    }
+
+
+    .subject-card:nth-child(4),
+    .subject-card:nth-child(5) {
+        grid-column: span 3;
+    }
+
+
+    .feature-grid,
+    .assistant-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .feature-grid > :last-child:nth-child(odd),
+    .assistant-grid > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+
+
+    .feature-card {
+        gap: 12px;
+
+        padding: 18px;
+    }
+
+
+    .assistant-card {
+        gap: 12px;
+
+        padding: 18px;
+    }
+
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+
+        min-width: 50px;
+    }
+
+
+    .assistant-icon {
+        width: 50px;
+        height: 50px;
+
+        min-width: 50px;
+    }
+
+
+    .feature-icon svg {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .assistant-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   12. 手機
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .site-main {
+        padding-top: 24px;
+        padding-bottom: 56px;
+    }
+
+
+    .header-container {
+        width: min(
+            calc(100% - 28px),
+            var(--content-width)
+        );
+
+        min-height: 64px;
+    }
+
+
+    .site-brand-text small {
+        display: none;
+    }
+
+
+    .site-brand-text strong {
+        font-size: 18px;
+    }
+
+
+    .site-brand-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .header-action {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .login-button {
+        min-width: 64px;
+
+        height: 36px;
+
+        padding: 0 13px;
+
+        font-size: 13px;
+    }
+
+
+    .site-main {
+        width: min(
+            calc(100% - 28px),
+            var(--content-width)
+        );
+    }
+
+
+    .checkin-section {
+        padding-top: 0;
+
+        display: block;
+    }
+
+
+    .checkin-card {
+        min-height: auto;
+
+        height: auto;
+
+        display: block;
+
+        padding: 24px;
+    }
+
+
+    .checkin-action {
+        width: 100%;
+
+        min-width: 0;
+
+        margin-top: 24px;
+    }
+
+
+    /*
+     * 手機維持 2 欄：
+     *
+     * 2 + 2 + 1
+     */
+    .subject-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .subject-card:nth-child(1),
+    .subject-card:nth-child(2),
+    .subject-card:nth-child(3),
+    .subject-card:nth-child(4) {
+        grid-column: span 1;
+    }
+
+
+    .subject-card:nth-child(5) {
+        grid-column: 1 / -1;
+    }
+
+
+    .subject-card {
+        min-height: 140px;
+    }
+
+
+    .feature-grid,
+    .assistant-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .feature-grid > :last-child:nth-child(odd),
+    .assistant-grid > :last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+
+
+    .feature-section,
+    .assistant-section {
+        margin-top: 42px;
+    }
+
+
+    .footer-container {
+        width: min(
+            calc(100% - 28px),
+            var(--content-width)
+        );
+
+        padding: 22px 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   13. 小型手機
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .header-container {
+        gap: 8px;
+    }
+
+
+    .header-actions {
+        gap: 2px;
+    }
+
+
+    .header-action {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    .header-action svg {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    .login-button {
+        min-width: 58px;
+
+        padding: 0 10px;
+    }
+
+
+    .site-main {
+        width: min(
+            calc(100% - 20px),
+            var(--content-width)
+        );
+    }
+
+
+    .subject-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+
+    .subject-card:nth-child(1),
+    .subject-card:nth-child(2),
+    .subject-card:nth-child(3),
+    .subject-card:nth-child(4) {
+        grid-column: span 1;
+    }
+
+
+    .subject-card:nth-child(5) {
+        grid-column: 1 / -1;
+    }
+
+
+    .subject-card {
+        min-height: 132px;
+
+        padding: 16px 8px;
+    }
+
+
+    .subject-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .subject-icon svg {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .subject-name {
+        font-size: 15px;
+    }
+
+
+    .feature-card,
+    .assistant-card {
+        padding: 18px;
+    }
+
+
+    .feature-icon,
+    .assistant-icon {
+        width: 50px;
+        height: 50px;
+
+        min-width: 50px;
+    }
+
+
+    .feature-icon svg,
+    .assistant-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .feature-content h3,
+    .assistant-card h3 {
+        font-size: 15px;
+    }
+
+
+    .feature-content p,
+    .assistant-card p {
+        font-size: 12px;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        gap: 10px 18px;
+    }
+
+}
+
+
+/* =========================================================
+   14. 極窄螢幕
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .subject-card:nth-child(1),
+    .subject-card:nth-child(2),
+    .subject-card:nth-child(3),
+    .subject-card:nth-child(4),
+    .subject-card:nth-child(5) {
+        grid-column: auto;
+    }
+
+
+    .subject-card {
+        min-height: 118px;
+    }
+
+}
+
+
+/* =========================================================
+   15. 減少動畫偏好
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
